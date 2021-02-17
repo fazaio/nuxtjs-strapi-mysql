@@ -1,0 +1,1 @@
+# NuxtJS+Strapi+Mysql
