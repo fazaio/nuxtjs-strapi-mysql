@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/tutorial-categories",
+      "handler": "tutorial-category.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tutorial-categories/count",
+      "handler": "tutorial-category.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tutorial-categories/:id",
+      "handler": "tutorial-category.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/tutorial-categories",
+      "handler": "tutorial-category.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/tutorial-categories/:id",
+      "handler": "tutorial-category.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/tutorial-categories/:id",
+      "handler": "tutorial-category.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

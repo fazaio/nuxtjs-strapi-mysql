@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tutorial_categories",
+  "info": {
+    "name": "Tutorial_category",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "tutorials": {
+      "collection": "tutorial",
+      "via": "tutorial_categories",
+      "dominant": true
+    }
+  }
+}

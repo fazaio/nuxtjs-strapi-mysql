@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tutorials",
+  "info": {
+    "name": "Tutorial"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "judul": {
+      "type": "string"
+    },
+    "kontent": {
+      "type": "richtext"
+    },
+    "tutorial_categories": {
+      "via": "tutorials",
+      "collection": "tutorial-category"
+    }
+  }
+}
