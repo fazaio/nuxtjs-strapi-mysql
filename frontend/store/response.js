@@ -3,12 +3,7 @@ export const state = () => ({
   loading: false,
 })
 
-export const actions = {
-  changeStatus({ commit }) {
-    commit('failed')
-    commit('loading', true)
-  },
-}
+export const actions = {}
 
 export const mutations = {
   response(state, payload) {
