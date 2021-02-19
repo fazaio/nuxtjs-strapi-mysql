@@ -6,8 +6,9 @@
           <h1
             class="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200"
           >
-            Sign in {{ loading }} - {{ response }}
+            Sign in {{ loading }} - {{ response.jwt }}
           </h1>
+          <p v-if="$strapi.user">Logged in</p>
           <p class="text-gray-500 dark:text-gray-400">
             Sign in to access your account
           </p>
@@ -68,6 +69,7 @@
               >.
             </p>
           </form>
+          <h1 @click="redir()">redirect</h1>
         </div>
       </div>
     </div>
@@ -78,7 +80,11 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  // middleware: 'auth',
+  middleware({ $strapi, redirect }) {
+    if ($strapi.user) {
+      return redirect('/member')
+    }
+  },
   data() {
     return {
       members: {
@@ -106,11 +112,15 @@ export default {
         .then(
           (res) => {
             this.$store.commit('response/response', res, { root: true })
+            // this.$router.push('/member')
           },
           (err) => {
             this.$store.commit('response/response', err, { root: true })
           }
         )
+    },
+    redir() {
+      this.$router.push('/member')
     },
   },
 }

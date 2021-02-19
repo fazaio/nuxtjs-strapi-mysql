@@ -1,5 +1,12 @@
 <template>
-  <h1>hello this user page</h1>
+  <div>
+    <h1>hello its user page</h1>
+    <br />
+    <p v-if="$strapi.user">{{ $strapi.user }}</p>
+    <br />
+    <div @click="logout()">logout</div>
+    <div @click="redir()">redir</div>
+  </div>
 </template>
 
 <script>
@@ -8,6 +15,16 @@ export default {
   computed: {
     user() {
       return this.$strapi.user
+    },
+  },
+  methods: {
+    logout() {
+      this.$strapi.logout()
+      this.$strapi.clearToken()
+      // this.$router.push('/')
+    },
+    redir() {
+      this.$router.push('/member/auth')
     },
   },
 }
