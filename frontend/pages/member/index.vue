@@ -2,16 +2,18 @@
   <div>
     <h1>hello its user page</h1>
     <br />
-    <p v-if="$strapi.user">{{ $strapi.user }}</p>
+    <p v-if="$strapi.user">{{ $strapi.user.username }}</p>
     <br />
     <div @click="logout()">logout</div>
-    <div @click="redir()">redir</div>
   </div>
 </template>
 
 <script>
 export default {
-  middleware: 'auth',
+  middleware: 'authenticated',
+  async asyncData({ $strapi }) {
+    return await $strapi.user
+  },
   computed: {
     user() {
       return this.$strapi.user
@@ -21,9 +23,9 @@ export default {
     logout() {
       this.$strapi.logout()
       this.$strapi.clearToken()
-      // this.$router.push('/')
-    },
-    redir() {
+      this.$cookies.remove('strapi_jwt', {
+        path: '/member',
+      })
       this.$router.push('/member/auth')
     },
   },

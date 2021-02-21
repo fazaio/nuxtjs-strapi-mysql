@@ -3,12 +3,7 @@
     <div class="container mx-auto">
       <div class="max-w-md mx-auto my-10">
         <div class="text-center">
-          <h1
-            class="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200"
-          >
-            Sign in {{ loading }} - {{ response.jwt }}
-          </h1>
-          <p v-if="$strapi.user">Logged in</p>
+          {{ response }}
           <p class="text-gray-500 dark:text-gray-400">
             Sign in to access your account
           </p>
@@ -69,7 +64,6 @@
               >.
             </p>
           </form>
-          <h1 @click="redir()">redirect</h1>
         </div>
       </div>
     </div>
@@ -111,16 +105,16 @@ export default {
         })
         .then(
           (res) => {
-            this.$store.commit('response/response', res, { root: true })
-            // this.$router.push('/member')
+            // this.$store.commit('response/response', res, { root: true })
+            this.$router.push('/member')
           },
           (err) => {
             this.$store.commit('response/response', err, { root: true })
+            setTimeout(() => {
+              this.$store.dispatch('response/clear', '', { root: true })
+            }, 3000)
           }
         )
-    },
-    redir() {
-      this.$router.push('/member')
     },
   },
 }

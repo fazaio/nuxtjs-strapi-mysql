@@ -1,9 +1,13 @@
 export const state = () => ({
-  response: 'res',
+  response: '',
   loading: false,
 })
 
-export const actions = {}
+export const actions = {
+  clear({ commit }) {
+    commit('clear')
+  },
+}
 
 export const mutations = {
   response(state, payload) {
@@ -11,6 +15,10 @@ export const mutations = {
   },
   loading(state, payload) {
     state.loading = payload
+  },
+  clear(state) {
+    state.loading = ''
+    state.response = ''
   },
 }
 
