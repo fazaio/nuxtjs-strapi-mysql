@@ -1,9 +1,7 @@
 <template>
   <div>
     <Top />
-    <div class="container mx-auto">
-      <Maincard />
-    </div>
+    wiwi
   </div>
 </template>
 

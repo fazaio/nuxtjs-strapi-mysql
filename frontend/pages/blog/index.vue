@@ -1,26 +1,16 @@
 <template>
   <div>
-    <navbars />
+    <Navbars />
     <div class="container mx-auto mt-5">
-      <maincard colorTag="bg-indigo-400" />
-      <maincard colorTag="bg-indigo-400" />
-      <maincard colorTag="bg-indigo-400" />
-      <maincard colorTag="bg-red-400" />
-      <maincard colorTag="bg-green-400" />
-      <maincard colorTag="bg-red-400" />
+      <div v-for="datas in data" :key="datas.id">
+        <MainCard colorTag="bg-indigo-400" :data="datas" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Maincard from '../../components/MainCard'
-import navbars from '../../components/navbars'
-
 export default {
-  components: {
-    navbars,
-    Maincard,
-  },
   async asyncData({ $strapi, error }) {
     try {
       const tutorials = await $strapi.find('tutorials')

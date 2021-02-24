@@ -43,7 +43,7 @@ export default {
   ],
 
   strapi: {
-    // strapi option
+    entities: ['tutorials'],
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
