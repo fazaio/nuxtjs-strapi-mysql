@@ -2,19 +2,15 @@
   <div>
     <Navbars />
     <div class="container mx-auto">
-      <div class="p-5 bg-white shadow round mt-5" @click="blog">
-        <h1>All Blog Page</h1>
-      </div>
+      <NuxtLink to="/blog">
+        <div class="p-5 bg-white shadow round mt-5">
+          <h1>All Blog Page</h1>
+        </div>
+      </NuxtLink>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  methods: {
-    blog() {
-      this.$router.push('/blog')
-    },
-  },
-}
+export default {}
 </script>
