@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'server',
@@ -40,6 +42,7 @@ export default {
     '@nuxt/content',
     '@nuxtjs/strapi',
     'cookie-universal-nuxt',
+    '@nuxtjs/sitemap',
   ],
 
   strapi: {
@@ -60,4 +63,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  sitemap: {
+    path: '/sitemapindex.xml',
+    routes: async () => {
+      const res = await axios.get('http://localhost:1337/tutorials')
+      return res.data.map((a) => `/blog/${a.judul}`)
+    },
+  },
 }
