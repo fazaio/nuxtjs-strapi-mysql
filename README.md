@@ -10,27 +10,11 @@ Feature:
 ## Front-end
 Module Nuxtjs
 > Folder: `frontend/`
->
-> '@nuxtjs/axios',
->
-> '@nuxtjs/pwa',
->
-> '@nuxt/content',
->
-> '@nuxtjs/strapi',
->
-> 'cookie-universal-nuxt',
->
-> '@nuxtjs/sitemap',
->
-> '@nuxtjs/markdownit',
 
 
 ## Back-end
 > Folder: `backend/`
-> User Auth
-> Mysql
-> Media
+
 
 Don't forget to Change your user, host, password, and db name in `/config/database.js`
 
