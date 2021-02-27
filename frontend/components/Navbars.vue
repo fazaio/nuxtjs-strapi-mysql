@@ -3,7 +3,7 @@
     <div class="container mx-auto">
       <NuxtLink to="/"
         ><div class="py-5 text-2xl text-indigo-400">
-          <h1>BLOG</h1>
+          <h1>Logo</h1>
         </div></NuxtLink
       >
     </div>

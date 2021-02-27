@@ -1,0 +1,1 @@
+<CardDetail :data="data"></CardDetail>

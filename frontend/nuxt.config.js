@@ -43,6 +43,7 @@ export default {
     '@nuxtjs/strapi',
     'cookie-universal-nuxt',
     '@nuxtjs/sitemap',
+    '@nuxtjs/markdownit',
   ],
 
   strapi: {
@@ -70,5 +71,8 @@ export default {
       const res = await axios.get('http://localhost:1337/tutorials')
       return res.data.map((a) => `/blog/${a.judul}`)
     },
+  },
+  markdownit: {
+    runtime: true,
   },
 }

@@ -1,10 +1,8 @@
 <template>
-  <div
-    class="p-5 m-3 shadow rounded bg-white hover:bg-yellow-100 md:mx-0 lg:mx-0"
-  >
-    <h1 class="text-lg text-gray-800">{{ data.judul }}</h1>
-    <div class="p-1">
-      <p class="text-md text-gray-700">{{ data.kontent }}</p>
+  <div class="p-5 m-3 shadow rounded bg-white md:mx-0 lg:mx-0">
+    <h1 class="text-gray-800">{{ data.judul }}</h1>
+    <div class="p-1 text-gray-700 text-jusify">
+      <div v-html="$md.render(model)"></div>
     </div>
     <div>
       <div class="mt-2">
@@ -19,6 +17,7 @@
 </template>
 
 <script>
+// import { getStrapiMedia } from '../utils/medias'
 export default {
   props: {
     data: {
@@ -26,7 +25,27 @@ export default {
       required: true,
     },
   },
+  computed: {
+    model() {
+      return this.data.kontent
+        .split('/uploads/')
+        .join('http://localhost:1337/uploads/')
+    },
+  },
 }
 </script>
 
-<style></style>
+<style>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
+</style>

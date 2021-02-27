@@ -15,8 +15,8 @@
       "type": "string"
     },
     "tutorials": {
-      "collection": "tutorial",
       "via": "tutorial_categories",
+      "collection": "tutorial",
       "dominant": true
     }
   }
