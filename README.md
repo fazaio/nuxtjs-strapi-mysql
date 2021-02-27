@@ -10,12 +10,19 @@ Feature:
 ## Front-end
 Module Nuxtjs
 > Folder: `frontend/`
+>
 > '@nuxtjs/axios',
+>
 > '@nuxtjs/pwa',
+>
 > '@nuxt/content',
+>
 > '@nuxtjs/strapi',
+>
 > 'cookie-universal-nuxt',
+>
 > '@nuxtjs/sitemap',
+>
 > '@nuxtjs/markdownit',
 
 
